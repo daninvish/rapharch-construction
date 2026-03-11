@@ -1,0 +1,382 @@
+/*  */
+
+body{
+     font-family: Roboto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+     background-color: rgba(5, 34, 199, 0.979);
+    color: white;
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    padding: 50px 8%;
+    width: 100%;
+    z-index: 1000;
+}
+header .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+header .logo h2{
+    text-align: center;
+}
+
+/*  NAVIGATION STYLING */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hide close icon initially */
+
+.close-icon {
+    display: none;
+    cursor: pointer;
+   fill: white;
+}
+
+.menu-icon {
+    cursor: pointer;
+  fill: white;
+    display: none;
+}
+
+/* Navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* MOBILE STYLES */
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: #111;
+        flex-direction: column;
+        padding-top: 80px;
+        transition: 0.4s ease;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        color: white;
+        font-size: 18px;
+    }
+
+    /* When active */
+    .nav-active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        z-index: 1001;
+    }
+    .menu-icon {
+    cursor: pointer;
+    color: white;
+   display: block;
+}
+.close-icon{
+    color: white;
+}
+}
+
+
+
+
+
+/* PROJECT HERO  */
+
+*{
+    list-style: none;
+    text-decoration: none;
+}
+#projects-hero {
+    text-align: center;
+    padding: 80px 10%;
+    background: #343A40;
+    color: white;
+}
+
+#projects-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#projects-hero p{
+    text-align: center;
+}
+
+/*  FILTER BUTTONS  */
+.filter-buttons {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.filter-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background: #eee;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+    background: #111;
+    color: white;
+}
+
+/* PROJECT GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 8% 80px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: 0.5s;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+.project-info p{
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* footer */
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 25px 15px;
+  /* font-size: 20px; */
+}
+.all-links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+}
+.useful-links a{
+
+  color: white;
+  display: block;
+    line-height: 35px;
+}
+.about-com{
+  width: 500px;
+  line-height: 35px;
+}
+.right{
+  margin-top: 30px;
+  text-align: center;
+}
+.useful-links a:hover{
+  color: blue;
+}
+.contacts{
+    line-height: 35px;
+}
+
+
+
+/* FOOTER RESPONSIVENESS */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .all-links {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .about-com {
+    width: 100%;
+  }
+
+  .useful-links,
+  .contacts {
+    width: 45%;
+  }
+}
+
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+
+  .all-links {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 25px;
+  }
+
+  .about-com,
+  .useful-links,
+  .contacts {
+    width: 100%;
+  }
+
+  .about-com h2 {
+    font-size: 18px;
+  }
+
+  .right {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  footer {
+    padding: 20px 10px;
+  }
+
+  .useful-links a,
+  .contacts p {
+    font-size: 14px;
+  }
+
+}
+
+/*  COUNTER SECTION  */
+
+.project-counter {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 60px 8%;
+    background: #f5f5f5;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.counter-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.counter-box h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.counter-box p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-counter {
+        flex-direction: column;
+    }
+}
+
+
+
+/*  PROJECT CTA SECTION  */
+
+.project-cta {
+    background: #C8A24A ;
+    color: white;
+    text-align: center;
+    padding: 80px 8%;
+}
+
+.project-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.project-cta p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color:#111;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: white;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta-btn:hover {
+    background: #c9a227;   /* gold accent */
+    color: white;
+}
